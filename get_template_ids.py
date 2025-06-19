@@ -1,7 +1,5 @@
 import json
 import argparse
-import os
-import sys
 import csv
 import jmespath
 import aiohttp
