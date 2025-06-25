@@ -13,7 +13,7 @@ The bulk_download.bat bactch script orchestrates Python scripts so as to downloa
 1. Ensure that [Python 3 is installed](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/ESC8FsATJxxNgljjfXCEmYIByHZqOM_XVohwH4z42f1K8g?e=Os7C7M) and that [installation has been troubleshooted if necessary](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/EWu0H2SnfohPqEPtmSI6K9QBw_UlWZ3i0chHbX977l6yoA?e=lNDdbK).
 2. Create a new folder in a convenient location on your computer.
 3. Download the bulk download tool [source code](https://git.corp.adobe.com/Adobesign/download-tools/tree/main/agreements/src) (constants.py, download.py, and restclient.py) and put the .py files in the folder from the previous step.
-4. Download [bulk-download.bat](https://adobe.sharepoint.com/:u:/s/AdobeSignLFS/EQf3d2-WMtdOlZblCQaazkQBcE_iHNwVIEkBs6NnCx0hiA?e=7MK1Df).
+4. Download bulk_download.bat.
 5. Create an access token with the scopes `agreement_read:account`, `library_read:account`, `user_read:account`, and `widget_read:account`. See the [Manually creating access tokens](#manually-creating-access-tokens) section of this article for this.
 6. Edit the .bat file and substitute the integration key into `<integration key goes here>`. 
 7. Run the .bat file by double-clicking it.
