@@ -32,10 +32,10 @@ This program uses the Adobe Sign API to fetch all of the agreements associated w
 
 ```
 sender,agr_id,secure_id 
-<*owner of agreement with ID* <*id1*>>*,*<*id1*>,<*id1*> 
-<*owner of agreement with ID* <*id2*>>*,*<*id2*>,<*id2*> 
+<owner of agreement with ID> <id1>>,<id1>,<id1> 
+<owner of agreement with ID <id2>>,<id2>,<id2> 
 <...> 
-<*owner of agreement with ID* <*idN*>>*,*<*idN*>,<*idN*> 
+<owner of agreement with ID <*dN>>,<idN>,<idN> 
 ```
 
 So, an output CSV file might look like 
@@ -61,7 +61,7 @@ If you want bulk_download_tool or download_webform_agreements to work in the gov
 
 get_template_ids.py is a Python command-line utility that saves all template IDs of templates accessible by the access token owner to a .csv file. This can be very useful when executing other programs that require such a .csv file as input.
 
-Here is how to use this program.
+Here is how to use the program:
 
 1. Ensure that [Python 3 is installed](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/ESC8FsATJxxNgljjfXCEmYIByHZqOM_XVohwH4z42f1K8g?e=Os7C7M) on your computer and that [installation has been troubleshooted if necessary](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/EWu0H2SnfohPqEPtmSI6K9QBw_UlWZ3i0chHbX977l6yoA?e=lNDdbK).
 2. Download get_template_ids.py from this repository.
