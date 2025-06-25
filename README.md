@@ -1,4 +1,4 @@
-# How to install and run the bulk download tool
+# bulk_download_tool
 
 1. Ensure that [Python 3 is installed](https://adobe.sharepoint.com/:w:/r/sites/AdobeSignLFS/_layouts/15/Doc.aspx?sourcedoc={C016BC20-2713-4D1C-8258-E37D70849982}&file=How to install Python 3.docx&action=default&mobileredirect=true) and that [installation has been troubleshooted if necessary](https://adobe.sharepoint.com/sites/AdobeSignLFS/_layouts/15/doc.aspx?sourcedoc={641fb46b-7ea7-4f88-a843-ed99223a2bd4}&action=edit). 
 2. Create a new folder in a convenient location on your computer. 
@@ -38,3 +38,12 @@ someemail2@org.gov,C4f7dEaB29fA3BcEdF0a2eB1-C5BaA8c4,C4f7dEaB29fA3BcEdF0a2eB1-C5
 someemail3@org.net,bAeC12fA-E9dC4Ab137fEB2CdA6b4,bAeC12fA-E9dC4Ab137fEB2CdA6b4
 ```
 
+# get_template_ids.py
+
+get_template_ids.py is a Python command-line utility that saves all template IDs of templates accessible by the access token owner to a .csv file. This can be very useful when executing other programs that require such a .csv file as input.
+
+Typical usage is
+
+```
+python get_template_ids.py --access_token <access_token> --environment gov
+```
