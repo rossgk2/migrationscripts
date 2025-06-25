@@ -1,4 +1,4 @@
-# How to install and run bulk download tool
+# How to install and run the bulk download tool
 
 [Link to Adobe Wiki page for bulk download tool](https://wiki.corp.adobe.com/pages/viewpage.action?spaceKey=ES&title=Updated+Bulk+Agreement+Download+Tool) 
 
