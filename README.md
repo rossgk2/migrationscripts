@@ -1,14 +1,15 @@
 # bulk_download_tool
 
-1. Ensure that [Python 3 is installed](https://adobe.sharepoint.com/:w:/r/sites/AdobeSignLFS/_layouts/15/Doc.aspx?sourcedoc={C016BC20-2713-4D1C-8258-E37D70849982}&file=How to install Python 3.docx&action=default&mobileredirect=true) and that [installation has been troubleshooted if necessary](https://adobe.sharepoint.com/sites/AdobeSignLFS/_layouts/15/doc.aspx?sourcedoc={641fb46b-7ea7-4f88-a843-ed99223a2bd4}&action=edit). 
-2. Create a new folder in a convenient location on your computer. 
-3. Download the bulk download tool [source code](https://git.corp.adobe.com/Adobesign/download-tools/tree/main/agreements/src) (only three .py) files and put the .py files in the folder. 
-4. Download the .py and .bat files from this SharePoint folder and put them in the same folder. 
-5. Create an integration key with the scopes agreement_read:account, library_read:account, user_read:account, widget_read:account 
-6. Edit bulk_download.bat (File > Open with) so as to substitute the integration key into \<integration key goes here\> 
-7. Run bulk_download.bat file by double-clicking it. 
+1. Ensure that [Python 3 is installed](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/ESC8FsATJxxNgljjfXCEmYIByHZqOM_XVohwH4z42f1K8g?e=Os7C7M) and that [installation has been troubleshooted if necessary](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/EWu0H2SnfohPqEPtmSI6K9QBw_UlWZ3i0chHbX977l6yoA?e=lNDdbK).
+2. Create a new folder in a convenient location on your computer.
+3. Download the bulk download tool [source code](https://git.corp.adobe.com/Adobesign/download-tools/tree/main/agreements/src) (constants.py, download.py, and restclient.py) and put the .py files in the folder from the previous step.
+4. Download [bulk-download.bat](https://adobe.sharepoint.com/:u:/s/AdobeSignLFS/EQf3d2-WMtdOlZblCQaazkQBcE_iHNwVIEkBs6NnCx0hiA?e=7MK1Df).
+5. Create an access token with the scopes `agreement_read:account`, `library_read:account`, `user_read:account`, and `widget_read:account`. See the [Manually creating access tokens](#Manually creating access tokens) section of this article for this.
+6. Edit the .bat file and substitute the integration key into `<integration key goes here>`. 
+7. Run the .bat file by double-clicking it.
+   1. If double-clicking the .bat file doesn't work, then hold Shift, right click on the .bat file, and click "Copy as path". Then open a CMD window, paste (CTRL-V may not work- you may have to right click and then click "Paste"), and press Enter.
 
-See the [Adobe Wiki](https://wiki.corp.adobe.com/pages/viewpage.action?spaceKey=ES&title=Updated+Bulk+Agreement+Download+Tool) for more information about the bulk download tool.
+See the [Adobe Wiki](https://wiki.corp.adobe.com/pages/viewpage.action?spaceKey=ES&title=Updated+Bulk+Agreement+Download+Tool) for more information about this tool.
 
 ## download_webform_agreements
 
@@ -38,7 +39,7 @@ someemail2@org.gov,C4f7dEaB29fA3BcEdF0a2eB1-C5BaA8c4,C4f7dEaB29fA3BcEdF0a2eB1-C5
 someemail3@org.net,bAeC12fA-E9dC4Ab137fEB2CdA6b4,bAeC12fA-E9dC4Ab137fEB2CdA6b4
 ```
 
-### How to modify bulk download tools
+### How to modify bulk download tools to work in government environment
 
 If you want bulk_download_tool or download_webform_agreements to work in the government environment of Adobe Sign, you must perform all of the steps from the above and make the following changes:
 
@@ -52,11 +53,12 @@ If you want bulk_download_tool or download_webform_agreements to work in the gov
 
 get_template_ids.py is a Python command-line utility that saves all template IDs of templates accessible by the access token owner to a .csv file. This can be very useful when executing other programs that require such a .csv file as input.
 
-Typical usage is
+Here is how to use this program.
 
-```
-python get_template_ids.py --access_token <access_token> --environment gov
-```
+1. Ensure that [Python 3 is installed](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/ESC8FsATJxxNgljjfXCEmYIByHZqOM_XVohwH4z42f1K8g?e=Os7C7M) on your computer and that [installation has been troubleshooted if necessary](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/EWu0H2SnfohPqEPtmSI6K9QBw_UlWZ3i0chHbX977l6yoA?e=lNDdbK).
+2. Download get_template_ids.py from this repository.
+3. Create an access token with the `library_read:account` scope if in commercial, and the `library_read:self` scope if in government.
+4. Use the access token to run the Python program in a terminal session by executing `python get_template_ids.py --access_token <*access token*> --commercial` or `python get_template_ids.py --access_token <*access token*> --government`.
 
 # Manually creating access tokens
 
@@ -74,7 +76,7 @@ Permanent access tokens may be created in commercial Sign. Here's how to manuall
 
 ## Government
 
-Only temporary access tokens can be created in Sign for Gov. Here's how to manually create and gain access to one:
+Only temporary access tokens can be created in government Sign. Here's how to manually create and gain access to one:
 
 1. Ensure that an API App has been created, where the owner of the API App is the email of the person who is going to be making API calls.
 2. Have the owner of the API App go to the government [API Swagger page](https://secure.na1.adobesign.us/public/docs/restapi/v6#!). Click on /baseUris. *Click /baseUris again so that you can see a text field with grey text "Authorization" inside it.* Click Authorize on the right. A new pane should pop up.
