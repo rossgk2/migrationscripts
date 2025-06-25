@@ -10,7 +10,7 @@ This repository hosts migration and migration-adjacent scripts. Currently, there
 
 The bulk_download.bat bactch script orchestrates Python scripts so as to download PDFs of completed agreements en masse. To use it:
 
-1. Ensure that [Python 3 is installed](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/ESC8FsATJxxNgljjfXCEmYIByHZqOM_XVohwH4z42f1K8g?e=Os7C7M) and that [installation has been troubleshooted if necessary](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/EWu0H2SnfohPqEPtmSI6K9QBw_UlWZ3i0chHbX977l6yoA?e=lNDdbK).
+1. Ensure that [Python 3 is installed](installation_instructions/How%20to%20install%20Python%203.pdf) and that [installation has been troubleshooted if necessary](installation_instructions/Troubleshooting%20existing%20Python%203%20install.pdf).
 2. Create a new folder in a convenient location on your computer.
 3. Download the bulk download tool [source code](https://git.corp.adobe.com/Adobesign/download-tools/tree/main/agreements/src) (constants.py, download.py, and restclient.py) and put the .py files in the folder from the previous step.
 4. Download bulk_download.bat.
