@@ -12,14 +12,12 @@ The bulk_download.bat bactch script orchestrates Python scripts so as to downloa
 
 1. Ensure that [Python 3 is installed](installation_instructions/How%20to%20install%20Python%203.pdf) and that [installation has been troubleshooted if necessary](installation_instructions/Troubleshooting%20existing%20Python%203%20install.pdf).
 2. Create a new folder in a convenient location on your computer.
-3. Download the bulk download tool [source code](https://git.corp.adobe.com/Adobesign/download-tools/tree/main/agreements/src) (constants.py, download.py, and restclient.py) and put the .py files in the folder from the previous step.
+3. Download the bulk download tool source code (constants.py, download.py, and restclient.py) from the Adobesign/download-tools/tree/main/agreements/src folder of the Adobe corporate GitHub, and put the .py files in the folder from the previous step.
 4. Download bulk_download.bat.
 5. Create an access token with the scopes `agreement_read:account`, `library_read:account`, `user_read:account`, and `widget_read:account`. See the [Manually creating access tokens](#manually-creating-access-tokens) section of this article for this.
 6. Edit the .bat file and substitute the integration key into `<integration key goes here>`. 
 7. Run the .bat file by double-clicking it.
    1. If double-clicking the .bat file doesn't work, then hold Shift, right click on the .bat file, and click "Copy as path". Then open a CMD window, paste (CTRL-V may not work- you may have to right click and then click "Paste"), and press Enter.
-
-See the [Adobe Wiki](https://wiki.corp.adobe.com/pages/viewpage.action?spaceKey=ES&title=Updated+Bulk+Agreement+Download+Tool) for more information about this tool.
 
 ## download_webform_agreements
 
@@ -65,7 +63,7 @@ get_template_ids.py is a Python command-line utility that saves all template IDs
 
 Here is how to use the program:
 
-1. Ensure that [Python 3 is installed](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/ESC8FsATJxxNgljjfXCEmYIByHZqOM_XVohwH4z42f1K8g?e=Os7C7M) on your computer and that [installation has been troubleshooted if necessary](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/EWu0H2SnfohPqEPtmSI6K9QBw_UlWZ3i0chHbX977l6yoA?e=lNDdbK).
+1. Ensure that [Python 3 is installed](installation_instructions/How%20to%20install%20Python%203.pdf) and that [installation has been troubleshooted if necessary](installation_instructions/Troubleshooting%20existing%20Python%203%20install.pdf).
 2. Download get_template_ids.py from this repository.
 3. Create an access token with the `library_read:account` scope if in commercial, and the `library_read:self` scope if in government.
 4. Use the access token to run the Python program in a terminal session by executing `python get_template_ids.py --access_token <*access token*> --commercial` or `python get_template_ids.py --access_token <*access token*> --government`.
