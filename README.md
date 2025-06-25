@@ -14,7 +14,7 @@ The bulk_download.bat bactch script orchestrates Python scripts so as to downloa
 2. Create a new folder in a convenient location on your computer.
 3. Download the bulk download tool [source code](https://git.corp.adobe.com/Adobesign/download-tools/tree/main/agreements/src) (constants.py, download.py, and restclient.py) and put the .py files in the folder from the previous step.
 4. Download [bulk-download.bat](https://adobe.sharepoint.com/:u:/s/AdobeSignLFS/EQf3d2-WMtdOlZblCQaazkQBcE_iHNwVIEkBs6NnCx0hiA?e=7MK1Df).
-5. Create an access token with the scopes `agreement_read:account`, `library_read:account`, `user_read:account`, and `widget_read:account`. See the [Manually creating access tokens](#Manually creating access tokens) section of this article for this.
+5. Create an access token with the scopes `agreement_read:account`, `library_read:account`, `user_read:account`, and `widget_read:account`. See the [Manually creating access tokens](#manually-creating-access-tokens) section of this article for this.
 6. Edit the .bat file and substitute the integration key into `<integration key goes here>`. 
 7. Run the .bat file by double-clicking it.
    1. If double-clicking the .bat file doesn't work, then hold Shift, right click on the .bat file, and click "Copy as path". Then open a CMD window, paste (CTRL-V may not work- you may have to right click and then click "Paste"), and press Enter.
@@ -53,11 +53,11 @@ someemail3@org.net,bAeC12fA-E9dC4Ab137fEB2CdA6b4,bAeC12fA-E9dC4Ab137fEB2CdA6b4
 
 If you want bulk_download_tool or download_webform_agreements to work in the government environment of Adobe Sign, you must perform all of the steps from the above and make the following changes:
 
-3. Create an access token with the scopes `agreement_read:self`, `library_read:self`, `user_read:self`, and `widget_read:self` by using the government API swagger page. See the "Manually creating access tokens" section of this article for this.
+3. Create an access token with the scopes `agreement_read:self`, `library_read:self`, `user_read:self`, and `widget_read:self` by using the government API swagger page. See the [Manually creating access tokens](#manually-creating-access-tokens) section of this article for this.
 
 3.5. After step 3, open constants.py in a text editor. CTRL-F for "INITIAL_HOST", and change the `INITIAL_HOST` value to the government API base URL, which is `"https://api.na1.adobesign.us:443"`. If you have already run the .bat file by following previous steps, then delete the folder named "dist" before you rerun the .bat file.
 
-5. Follow the instructions in [Manually creating access tokens](#Manually creating access tokens) below to obtain an access token. Copy the portion of the access token that does *not* include "Bearer ". Then open the .bat file and paste this into `<integration key goes here>`.
+5. Follow the instructions in [Manually creating access tokens](#manually-creating-access-tokens) below to obtain an access token. Copy the portion of the access token that does *not* include "Bearer ". Then open the .bat file and paste this into `<integration key goes here>`.
 
 # get_template_ids.py
 
