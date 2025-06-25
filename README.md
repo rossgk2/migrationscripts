@@ -8,7 +8,7 @@
 6. Edit bulk_download.bat (File > Open with) so as to substitute the integration key into \<integration key goes here\> 
 7. Run bulk_download.bat file by double-clicking it. 
 
-See the [Adobe Wiki]([Link to Adobe Wiki page for bulk download tool](https://wiki.corp.adobe.com/pages/viewpage.action?spaceKey=ES&title=Updated+Bulk+Agreement+Download+Tool) for more information about the bulk download tool.
+See the [Adobe Wiki](https://wiki.corp.adobe.com/pages/viewpage.action?spaceKey=ES&title=Updated+Bulk+Agreement+Download+Tool) for more information about the bulk download tool.
 
 ## download_webform_agreements
 
