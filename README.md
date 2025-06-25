@@ -23,7 +23,7 @@ See the [Adobe Wiki](https://wiki.corp.adobe.com/pages/viewpage.action?spaceKey=
 
 ## download_webform_agreements
 
-If you want to download all agreements originating from a web form, then follow the above steps, making the following modifications:
+If you want to download all agreements originating from a web form, then follow the same steps as before, but with the following modifications:
 
 3. Download the get_webform_agreement_ids.py file from /download_webform_agreements and put it with the rest of your .py files.
 4. Run download_webform_agreements.bat instead of bulk_download.bat.
