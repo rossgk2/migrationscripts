@@ -9,7 +9,7 @@ set integration-key=<integration key goes here>
 set webform-id=<webform id goes here>
 @echo on
 
-python get-webform-agreement-ids.py %integration-key% %webform-id%
+python get_webform_agreement_ids.py %integration-key% %webform-id%
 
 @rem Set current-date to be the current date
 for /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set current-date=%%c-%%a-%%b)
