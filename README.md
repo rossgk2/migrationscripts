@@ -1,3 +1,11 @@
+# Overview
+
+This repository hosts migration and migration-adjacent scripts. Currently, there are:
+
+* [bulk_download_tool.bat](bulk_download_tool) batch script that orchestrates Python scripts so as to download PDFs of completed agreements en masse
+* [download_webform_agreements.bat](download_webform_agreements), which does the same thing as the first script but for agreements originating from Adobe Sign web forms
+* a [get_template_ids.py](get_template_ids.py) Python script that can be used to save all Adobe Sign template IDs to a .csv file for use by other scripts
+
 # bulk_download_tool
 
 1. Ensure that [Python 3 is installed](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/ESC8FsATJxxNgljjfXCEmYIByHZqOM_XVohwH4z42f1K8g?e=Os7C7M) and that [installation has been troubleshooted if necessary](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/EWu0H2SnfohPqEPtmSI6K9QBw_UlWZ3i0chHbX977l6yoA?e=lNDdbK).
