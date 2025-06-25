@@ -1,12 +1,14 @@
 # Overview
 
-This repository hosts migration and migration-adjacent scripts. Currently, there are:
+This repository hosts migration and migration-adjacent scripts. Currently, there is:
 
-* [bulk_download_tool.bat](bulk_download_tool) batch script that orchestrates Python scripts so as to download PDFs of completed agreements en masse
-* [download_webform_agreements.bat](download_webform_agreements), which does the same thing as the first script but for agreements originating from Adobe Sign web forms
-* a [get_template_ids.py](get_template_ids.py) Python script that can be used to save all Adobe Sign template IDs to a .csv file for use by other scripts
+* a [bulk_download.bat](#bulk_download_tool) batch script that orchestrates Python scripts so as to download PDFs of completed agreements en masse
+* a [download_webform_agreements.bat](#download_webform_agreements), which does the same thing as the first script but for agreements originating from Adobe Sign web forms
+* a [get_template_ids.py](#get_template_idspy) Python script that can be used to save all Adobe Sign template IDs to a .csv file for use by other scripts
 
 # bulk_download_tool
+
+The bulk_download.bat bactch script orchestrates Python scripts so as to download PDFs of completed agreements en masse. To use it:
 
 1. Ensure that [Python 3 is installed](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/ESC8FsATJxxNgljjfXCEmYIByHZqOM_XVohwH4z42f1K8g?e=Os7C7M) and that [installation has been troubleshooted if necessary](https://adobe.sharepoint.com/:w:/s/AdobeSignLFS/EWu0H2SnfohPqEPtmSI6K9QBw_UlWZ3i0chHbX977l6yoA?e=lNDdbK).
 2. Create a new folder in a convenient location on your computer.
@@ -28,7 +30,7 @@ If you want to download all agreements originating from a web form, then follow 
 
 ### get_webform_agreement_ids.py
 
-This program uses the Adobe Sign API to fetch all of the agreements associated with a web form of a given web form ID and then save the associated agreement senders and agreement IDs into a .csv file of a particular format. The format of the output .csv is 
+This program uses the Adobe Sign API to fetch all of the agreements associated with a web form of a given web form ID and then save the associated agreement senders and agreement IDs into a .csv file of a particular format. For my future reference, I am recording here that the format of the output .csv is 
 
 ```
 sender,agr_id,secure_id 
