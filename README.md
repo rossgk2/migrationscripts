@@ -38,6 +38,16 @@ someemail2@org.gov,C4f7dEaB29fA3BcEdF0a2eB1-C5BaA8c4,C4f7dEaB29fA3BcEdF0a2eB1-C5
 someemail3@org.net,bAeC12fA-E9dC4Ab137fEB2CdA6b4,bAeC12fA-E9dC4Ab137fEB2CdA6b4
 ```
 
+### How to modify bulk download tools
+
+If you want bulk_download_tool or download_webform_agreements to work in the government environment of Adobe Sign, you must perform all of the steps from the above and make the following changes:
+
+3. Create an access token with the scopes `agreement_read:self`, `library_read:self`, `user_read:self`, and `widget_read:self` by using the government API swagger page. See the "Manually creating access tokens" section of this article for this.
+
+3.5. After step 3, open constants.py in a text editor. CTRL-F for "INITIAL_HOST", and change the `INITIAL_HOST` value to the government API base URL, which is `"https://api.na1.adobesign.us:443"`. If you have already run the .bat file by following previous steps, then delete the folder named "dist" before you rerun the .bat file.
+
+5. Follow the instructions in [Manually creating access tokens](#Manually creating access tokens) below to obtain an access token. Copy the portion of the access token that does *not* include "Bearer ". Then open the .bat file and paste this into `<integration key goes here>`.
+
 # get_template_ids.py
 
 get_template_ids.py is a Python command-line utility that saves all template IDs of templates accessible by the access token owner to a .csv file. This can be very useful when executing other programs that require such a .csv file as input.
@@ -47,3 +57,27 @@ Typical usage is
 ```
 python get_template_ids.py --access_token <access_token> --environment gov
 ```
+
+# Manually creating access tokens
+
+## Commercial
+
+Permanent access tokens may be created in commercial Sign. Here's how to manually create and gain access to one:
+
+1. Have an Account Admin log into Adobe Sign and click on Admin.
+2. Search "access tokens" in the left sidebar, and click on "Access Tokens".
+3. On the new screen that comes up, click the plus inside the circle.
+4. Select the desired scopes.
+5. Scroll down and click Save.
+6. Click on the row in the table corresponding to the access token you just created. Then click on the blue "Integration Key" text.
+7. Copy the integration key.
+
+## Government
+
+Only temporary access tokens can be created in Sign for Gov. Here's how to manually create and gain access to one:
+
+1. Ensure that an API App has been created, where the owner of the API App is the email of the person who is going to be making API calls.
+2. Have the owner of the API App go to the government [API Swagger page](https://secure.na1.adobesign.us/public/docs/restapi/v6#!). Click on /baseUris. *Click /baseUris again so that you can see a text field with grey text "Authorization" inside it.* Click Authorize on the right. A new pane should pop up.
+3. Select the desired scopes.
+4. Scroll down, and click yet another Authorize button. You may then be prompted with a login screen; if this happens, log in. Then approve all of the permissions by clicking "Allow Access".
+5. You will be redirected back to the API Swagger page, except now text such as "Bearer aE606FcAcc194C3a9qFkl", which is an access token, has been inserted into the Authorization field.
